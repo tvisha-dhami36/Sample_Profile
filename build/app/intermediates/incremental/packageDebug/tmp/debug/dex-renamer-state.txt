@@ -1,0 +1,4 @@
+#Tue May 17 19:34:48 IST 2022
+base.0=/Users/imac/Desktop/Project/SampleProfile/sample_profile/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
