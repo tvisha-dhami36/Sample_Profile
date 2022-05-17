@@ -3,102 +3,102 @@ import 'package:http/http.dart' as http;
 
 class Profile {
   String? name;
-  // List<dynamic>? alternateNames;
-  // String? species;
+  List<dynamic>? alternateNames;
+  String? species;
   String? gender;
-  // String? house;
+  String? house;
   String? dateOfBirth;
   String? yearOfBirth;
-  // bool? wizard;
-  // String? ancestry;
-  // String? eyeColour;
-  // String? hairColour;
-  // Wand? wand;
-  // String? patronus;
-  // bool? hogwartsStudent;
-  // bool? hogwartsStaff;
-  // String? actor;
-  // List<dynamic>? alternateActors;
-  // bool? alive;
+  bool? wizard;
+  String? ancestry;
+  String? eyeColour;
+  String? hairColour;
+  Wand? wand;
+  String? patronus;
+  bool? hogwartsStudent;
+  bool? hogwartsStaff;
+  String? actor;
+  List<dynamic>? alternateActors;
+  bool? alive;
   String? image;
 
   Profile(
       {this.name,
-      // this.alternateNames,
-      // this.species,
+      this.alternateNames,
+      this.species,
       this.gender,
-      // this.house,
+      this.house,
       this.dateOfBirth,
       this.yearOfBirth,
-      // this.wizard,
-      // this.ancestry,
-      // this.eyeColour,
-      // this.hairColour,
-      // this.wand,
-      // this.patronus,
-      // this.hogwartsStudent,
-      // this.hogwartsStaff,
-      // this.actor,
-      // this.alternateActors,
-      // this.alive,
+      this.wizard,
+      this.ancestry,
+      this.eyeColour,
+      this.hairColour,
+      this.wand,
+      this.patronus,
+      this.hogwartsStudent,
+      this.hogwartsStaff,
+      this.actor,
+      this.alternateActors,
+      this.alive,
       this.image});
 
   Profile.fromJson(Map<String, dynamic> json) {
     name = json['name'];
-    // if (json['alternate_names'] != null) {
-    //   alternateNames =
-    //       List<dynamic>.from(json["alternate_names"].map((x) => x));
-    // }
-    // species = json['species'];
+    if (json['alternate_names'] != null) {
+      alternateNames =
+          List<dynamic>.from(json["alternate_names"].map((x) => x));
+    }
+    species = json['species'];
     gender = json['gender'];
-    // house = json['house'];
+    house = json['house'];
     dateOfBirth = json['dateOfBirth'].toString();
     yearOfBirth = json['yearOfBirth'].toString();
-    // wizard = json['wizard'];
-    // ancestry = json['ancestry'];
-    // eyeColour = json['eyeColour'];
-    // hairColour = json['hairColour'];
-    // wand = json['wand'] != null ? new Wand.fromJson(json['wand']) : null;
-    // patronus = json['patronus'];
-    // hogwartsStudent = json['hogwartsStudent'];
-    // hogwartsStaff = json['hogwartsStaff'];
-    // actor = json['actor'];
-    // if (json['alternate_actors'] != null) {
-    //   alternateActors =
-    //       List<String>.from(json["alternate_actors"].map((x) => x));
-    // }
-    // alive = json['alive'];
+    wizard = json['wizard'];
+    ancestry = json['ancestry'];
+    eyeColour = json['eyeColour'];
+    hairColour = json['hairColour'];
+    wand = json['wand'] != null ? new Wand.fromJson(json['wand']) : null;
+    patronus = json['patronus'];
+    hogwartsStudent = json['hogwartsStudent'];
+    hogwartsStaff = json['hogwartsStaff'];
+    actor = json['actor'];
+    if (json['alternate_actors'] != null) {
+      alternateActors =
+          List<String>.from(json["alternate_actors"].map((x) => x));
+    }
+    alive = json['alive'];
     image = json['image'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['name'] = this.name;
-    // if (this.alternateNames != null) {
-    //   data['alternate_names'] =
-    //       this.alternateNames!.map((v) => v.toJson()).toList();
-    // }
-    // data['species'] = this.species;
+    if (this.alternateNames != null) {
+      data['alternate_names'] =
+          this.alternateNames!.map((v) => v.toJson()).toList();
+    }
+    data['species'] = this.species;
     data['gender'] = this.gender;
-    // data['house'] = this.house;
+    data['house'] = this.house;
     data['dateOfBirth'] = this.dateOfBirth;
     data['yearOfBirth'] = this.yearOfBirth;
-    // data['wizard'] = this.wizard;
-    // data['ancestry'] = this.ancestry;
-    // data['eyeColour'] = this.eyeColour;
-    // data['hairColour'] = this.hairColour;
-    // if (this.wand != null) {
-    //   data['wand'] = this.wand!.toJson();
-    // }
-    // data['patronus'] = this.patronus;
-    // data['hogwartsStudent'] = this.hogwartsStudent;
-    // data['hogwartsStaff'] = this.hogwartsStaff;
-    // data['actor'] = this.actor;
-    // if (this.alternateActors != null) {
-    //   data['alternate_actors'] =
-    //       this.alternateActors!.map((v) => v.toJson()).toList();
-    // }
-    // data['alive'] = this.alive;
+    data['wizard'] = this.wizard;
+    data['ancestry'] = this.ancestry;
+    data['eyeColour'] = this.eyeColour;
+    data['hairColour'] = this.hairColour;
+    if (this.wand != null) {
+      data['wand'] = this.wand!.toJson();
+    }
+    data['patronus'] = this.patronus;
+    data['hogwartsStudent'] = this.hogwartsStudent;
+    data['hogwartsStaff'] = this.hogwartsStaff;
+    data['actor'] = this.actor;
+    if (this.alternateActors != null) {
+      data['alternate_actors'] =
+          this.alternateActors!.map((v) => v.toJson()).toList();
+    }
+    data['alive'] = this.alive;
     data['image'] = this.image;
     return data;
   }
